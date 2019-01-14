@@ -12,10 +12,6 @@ cd .. || goto :error
 if exist build rmdir build /s /q || goto :error
 mkdir build || goto :error
 
-:: Unpack archived dependencies
-echo Unpacking archived dependencies...
-"%BUILD_7ZIP%" x -y -odependencies64 dependencies64\large_files_win32.7z || goto :error
-
 :: Setup VC++ environment
 echo Setting up VC++...
 call "%BUILD_VCVARSALL%" amd64 || goto :error
